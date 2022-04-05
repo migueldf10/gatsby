@@ -442,6 +442,7 @@ export type ActionsUnion =
   | IMaterializePageMode
   | ISetJobV2Context
   | IClearJobV2Context
+  | IProcessGatsbyImageSourceUrlAction
 
 export interface ISetComponentFeatures {
   type: `SET_COMPONENT_FEATURES`
@@ -961,7 +962,7 @@ export interface INodeManifest {
   }
 }
 
-export interface IProcessGatsbyImageSourceURL {
+export interface IProcessGatsbyImageSourceUrlAction {
   type: `PROCESS_GATSBY_IMAGE_SOURCE_URL`
   payload: {
     sourceUrl: string
