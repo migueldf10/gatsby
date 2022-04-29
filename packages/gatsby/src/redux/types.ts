@@ -440,6 +440,7 @@ export type ActionsUnion =
   | ISetJobV2Context
   | IClearJobV2Context
   | IProcessGatsbyImageSourceUrlAction
+  | IClearGatsbyImageSourceUrlAction
 
 export interface ISetComponentFeatures {
   type: `SET_COMPONENT_FEATURES`
@@ -964,6 +965,10 @@ export interface IProcessGatsbyImageSourceUrlAction {
   payload: {
     sourceUrl: string
   }
+}
+
+export interface IClearGatsbyImageSourceUrlAction {
+  type: `CLEAR_GATSBY_IMAGE_SOURCE_URL`
 }
 
 export interface ITelemetry {
