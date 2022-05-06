@@ -441,6 +441,7 @@ export type ActionsUnion =
   | IClearJobV2Context
   | IProcessGatsbyImageSourceUrlAction
   | IClearGatsbyImageSourceUrlAction
+  | IMergeGatsbyImageSourceUrlTelemetryState
 
 export interface ISetComponentFeatures {
   type: `SET_COMPONENT_FEATURES`
@@ -980,6 +981,7 @@ export interface IMergeWorkerQueryState {
   payload: {
     workerId: number
     queryStateChunk: IGatsbyState["queries"]
+    queryStateTelemetryChunk: IGatsbyState["telemetry"]
   }
 }
 
