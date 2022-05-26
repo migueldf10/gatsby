@@ -129,6 +129,14 @@ export const preprocessSource: GatsbyNode["preprocessSource"] = async (
       parent: ``,
       internal: { contentDigest: ``, owner: ``, type: `` },
     },
+    {
+      id: ``,
+      children: [],
+      parent: ``,
+      internal: { contentDigest: ``, owner: ``, type: `` },
+      absolutePath: filename,
+      sourceInstanceName: `mocked`,
+    },
     mdxOptions
   )
 
@@ -152,7 +160,12 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
           body: {
             type: `String!`,
             async resolve(mdxNode) {
-              const code = await compileMDX(mdxNode.rawBody, mdxNode, {})
+              const code = await compileMDX(
+                mdxNode.rawBody,
+                mdxNode,
+                mdxNode,
+                {}
+              )
               return code.toString()
             },
           },
