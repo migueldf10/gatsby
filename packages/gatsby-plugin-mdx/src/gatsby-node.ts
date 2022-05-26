@@ -152,8 +152,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
           body: {
             type: `String!`,
             async resolve(mdxNode) {
-              const code = await compile(mdxNode.rawBody, mdxOptions)
-
+              const code = await compileMDX(mdxNode.rawBody, mdxNode, {})
               return code.toString()
             },
           },
